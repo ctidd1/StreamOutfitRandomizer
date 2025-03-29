@@ -50,10 +50,13 @@ namespace StreamOutfitRandomizer
 
         private void MakeRandomChoice(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Test");
             var row = categoryDataGrid.SelectedItem;
             if (row is Category category)
             {
+                if (category.NumberOfItems <= 0)
+                {
+                    category.NumberOfItems = 1;
+                }
                 category.RandomChoice = random.Next(category.NumberOfItems) + 1;
                 _categoryContext.SaveChanges();
             }
