@@ -54,7 +54,7 @@ namespace StreamOutfitRandomizer
             var row = categoryDataGrid.SelectedItem;
             if (row is Category category)
             {
-                category.RandomChoice = random.Next(category.NumberOfItems + 1);
+                category.RandomChoice = random.Next(category.NumberOfItems) + 1;
                 _categoryContext.SaveChanges();
             }
         }
