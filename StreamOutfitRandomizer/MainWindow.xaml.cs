@@ -61,9 +61,9 @@ namespace StreamOutfitRandomizer
                 _categoryContext.SaveChanges();
             }
         }
-        private void OnCellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        private void OnCellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
         {
-            _categoryContext.SaveChanges();   
+            _categoryContext.SaveChanges();
         }
 
         protected override void OnClosing(CancelEventArgs e)
